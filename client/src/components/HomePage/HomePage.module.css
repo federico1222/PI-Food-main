@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerHome {
+    background-color: rgba(203, 191, 191, 0.757);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.home {
+    margin-left: 15px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: aliceblue;
+    padding: 15px;
+}
+
+.welcome {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+}
+
+.containerDiets {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+}
+
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+

@@ -1,0 +1,67 @@
+.button {
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+.containerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 15px;
+    border: 1px solid white;
+    color: white;
+    width: 100px;
+    height: 100%;
+    padding: 8.5px;
+    flex-wrap: wrap;
+}
+.containerLogin img {
+    width: 20px;
+}
+.profile {
+    display: flex;
+
+    align-items: center;
+    border: 1px solid white;
+    padding: 8px;
+    gap: 5px;
+    border-radius: 15px;
+}
+.profile p {
+    color: white;
+}
+
+.profile img {
+    width: 50px;
+    border-radius: 1000px;
+    border: 1px solid black;
+}
+.LoginRegister {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    gap: 20px;
+}
+
+
+.containerSingIn {
+    background-color: rgba(231, 166, 53, 0.676);
+    width: 100px;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 8.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.containerSingIn img {
+    width: 20px;
+}

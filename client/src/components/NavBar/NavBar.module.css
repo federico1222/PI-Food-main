@@ -1,0 +1,47 @@
+
+.containerNav {
+    width: 100px;
+    padding: 10px;
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logoLanding {
+    display: flex;justify-content: center;align-items: center;
+    margin-top: 20px;
+}
+.buttons {
+    height: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttonNav{
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.buttonNav:hover {
+    background-color: rgba(90, 24, 24, 0.282);
+    border: 1px solid rgba(54, 18, 18, 0.087);
+}
+.ProfileLogout {
+    height: 30%;
+}
+
+.icon {
+    color: rgba(21, 21, 41, 0.821);
+    font-size: 1.15em;
+}
+
+
+@media screen and (max-width:1080px) {
+
+}

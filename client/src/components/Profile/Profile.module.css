@@ -1,0 +1,44 @@
+
+.containerProfile {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 30%;
+}
+
+.profile h1 {
+    font-size:1.50em;
+    line-height: 100%;
+    color: black;
+}
+
+.profile span {
+    color: rgba(231, 166, 53, 0.676);
+}
+
+.profile p {
+    color: black;
+    font-size: 1em;
+}
+
+.imgProfile{
+    width: 70%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+    width: 50px;
+}
