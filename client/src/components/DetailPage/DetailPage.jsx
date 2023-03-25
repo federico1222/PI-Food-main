@@ -1,11 +1,15 @@
 import React from "react";
 import styles from '../DetailPage/DetailPage.module.css'
+import NavBar from "../NavBar/NavBar";
 
 const DetailPage = () => {
     return(
-        <>
-        <h1>DetailPage</h1>
-        </>
+        <div className={styles.container}>
+            <NavBar/>
+            <div className={styles.detailPage}>
+
+            </div>
+        </div>
     )
 };
 

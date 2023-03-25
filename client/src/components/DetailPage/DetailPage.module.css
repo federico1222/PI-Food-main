@@ -1,0 +1,14 @@
+.container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+}
+
+.detailPage {
+    border: 1px solid red;
+    margin-left: 15px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+}

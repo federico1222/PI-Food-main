@@ -53,6 +53,11 @@ router.post("/", async (req, res) => {
       createInDb,
       diets,
     } = req.body;
+    if (!Array.isArray(diets)) {
+      return res.status(400).json({
+        error: "El campo 'diets' debe ser un array de cadenas de texto",
+      });
+    }
     let newRecipe = await createdRecipe(
       title,
       Imagen,
@@ -63,7 +68,7 @@ router.post("/", async (req, res) => {
       diets
     );
 
-    res.status(200).send("Receta creada con exito");
+    res.status(200).send(newRecipe);
   } catch (error) {
     res.status(404).send(error);
   }

@@ -4,14 +4,14 @@ import diets from "./img";
 import { TbSquareRoundedArrowLeftFilled,TbSquareRoundedArrowRightFilled } from 'react-icons/tb';
 
 const Carrusel = () => {
-  const [currentImage, setCurrentImage] = useState(4); // Inicializamos el estado en 4 para mostrar las primeras 5 imágenes
-  const [slideClass, setSlideClass] = useState(""); // Clase CSS para la transición de las imágenes
+  const [currentImage, setCurrentImage] = useState(4); 
+  const [slideClass, setSlideClass] = useState(""); 
 
   useEffect(() => {
     if (slideClass) {
       setTimeout(() => {
         setSlideClass("");
-      }, 500); // Espera 0.5 segundos antes de eliminar la clase CSS
+      }, 500); 
     }
   }, [slideClass]);
 
@@ -21,7 +21,7 @@ const Carrusel = () => {
         ? diets.length - 1
         : currentImage - 1
     );
-    setSlideClass(styles.slideRight); // Agrega la clase CSS para la transición a la derecha
+    setSlideClass(styles.slideRight); 
   };
 
   const handleNext = () => {
@@ -38,12 +38,12 @@ const Carrusel = () => {
       <button onClick={handlePrev} className={styles.buttonA}><TbSquareRoundedArrowLeftFilled/></button>
       <div className={styles.slider}>
         {
-          diets.slice(currentImage - 4, currentImage + 1).map((element)=> { 
+          diets.slice(currentImage - 4, currentImage + 1).map((element, i)=> { 
             return(
               <img 
                 src={element.src} 
                 alt="" 
-                key={element.id} 
+                key={i} 
                 className={`${styles.slide} ${slideClass}`} 
               />
             )

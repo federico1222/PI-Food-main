@@ -4,7 +4,7 @@ const { API_KEY } = process.env;
 
 const getApi = async () => {
   const apiUrl = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
   );
   const apiInfo = await apiUrl.data.results?.map((recipe) => {
     return {
@@ -13,9 +13,10 @@ const getApi = async () => {
       Imagen: recipe.image,
       SumamaryOfTheDish: recipe.summary,
       HealthyFoodLevel: recipe.healthScore,
-      StepByStep: recipe.analyzedInstructions?.map(
-        (instrucciones) => instrucciones.steps
+      StepByStep: recipe.analyzedInstructions?.map((instrucciones) =>
+        instrucciones.steps?.map((steps) => steps.step)
       ),
+      Diets: recipe.diets,
     };
   });
   return apiInfo;
@@ -74,42 +75,37 @@ const createdRecipe = async (
     createInDb,
   });
 
-  const dietDataBase = await Diets.findAll({
-    where: { name: diets },
+  const dietPromises = diets.map(async (diet) => {
+    let dietInstance = await Diets.findOrCreate({
+      where: { name: diet },
+    });
+    return dietInstance[0];
   });
 
-  recipeCreated.addDiets(dietDataBase);
+  const dietInstances = await Promise.all(dietPromises);
+  recipeCreated.addDiets(dietInstances);
   return recipeCreated;
 };
 
 // ---------------------------------------Diets ------------------------------------------
+//En este código, estamos creando un conjunto vacío llamado dietsSet.
+//Luego, por cada receta que obtenemos de la API, recorremos su propiedad Diets.
+//Si encontramos una dieta que aún no está en el conjunto, la agregamos utilizando
+//el método add() de Set. Una vez que hemos recorrido todas las recetas, convertimos
+//el conjunto en un array utilizando el operador .... Finalmente, devolvemos el array de
+//dietas.
 
-// let diets = [
-//   { name: "gluten free" },
-//   { name: "ketogenic" },
-//   { name: "vegetarian" },
-//   { name: "Lacto-Vegetarian" },
-//   { name: "Ovo-Vegetarian" },
-//   { name: "vegan" },
-//   { name: "Pescetarian" },
-//   { name: "Paleo" },
-//   { name: "primal" },
-//   { name: "Low FODMAP" },
-//   { name: "whole 30" },
-// ];
-const diets = async () => {
-  const apiUrl = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true`
-  );
-  const apiInfo = await apiUrl.data.results?.map((recipe) => {
-    return {
-      name: recipe.diets?.map((element) => {
-        element.diets;
-      }),
-    };
-  });55
-  console.log(apiInfo);
-  return apiInfo;
+const getAlldiets = async () => {
+  const diets = await getAllRecipe();
+  const dietsSet = new Set();
+
+  for (const recipe of diets) {
+    for (const diet of recipe.Diets) {
+      dietsSet.add(diet);
+    }
+  }
+  const dietsArray = [...dietsSet];
+  return dietsArray;
 };
 
 module.exports = {
@@ -117,5 +113,5 @@ module.exports = {
   findRecipeByTitle,
   getRecipeById,
   createdRecipe,
-  diets,
+  getAlldiets,
 };

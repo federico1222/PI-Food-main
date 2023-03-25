@@ -1,47 +1,68 @@
-.button {
-    border: none;
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+
+.singInButton {
+    border: 1px solid #5E454B;
+    color: #5E454B;
     background-color: transparent;
-    color: white;
-}
-.containerLogin {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    border-radius: 15px;
-    border: 1px solid white;
-    color: white;
-    width: 100px;
-    height: 100%;
-    padding: 8.5px;
-    flex-wrap: wrap;
+    font-weight: 900;
+    font-family: 'Work Sans';
+    padding: 5px;
+
 }
-.containerLogin img {
-    width: 20px;
+.singInButton:hover {
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+}
+.LoginButton {
+    color: white;
+    background-color: #5E454B;
+    border: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Work Sans';
+    font-weight: 900;
+    padding: 5px;
+}
+.LoginButton:hover {
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
 }
 .profile {
     display: flex;
-
     align-items: center;
-    border: 1px solid white;
     padding: 8px;
     gap: 5px;
     border-radius: 15px;
 }
+
 .profile p {
-    color: white;
+    color: black;
+    font-size: 1em;
 }
 
 .profile img {
     width: 50px;
-    border-radius: 1000px;
-    border: 1px solid black;
+    border-radius: 20px;
 }
+
 .LoginRegister {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-family: 'Roboto';
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,19 +70,3 @@
     gap: 20px;
 }
 
-
-.containerSingIn {
-    background-color: rgba(231, 166, 53, 0.676);
-    width: 100px;
-    flex-wrap: wrap;
-    height: 100%;
-    padding: 8.5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
-
-.containerSingIn img {
-    width: 20px;
-}

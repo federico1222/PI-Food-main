@@ -6,19 +6,19 @@
   overflow-x: hidden;
   max-width: 1350px;
   width: 100%;
+  
 }
 
 .buttonA {
   font-size: 60px;
   border: none;
-  color: rgba(231, 166, 53, 0.412);
-
+  color:#5e454b7e;
+  background-color: transparent;
 }
 
 .buttonA:hover {
-  color: rgba(231, 166, 53, 0.676);
+  color:#5E454B;
 }
-
 .slide:hover {
   transform: scale(1.04);
   transition: transform 0.3s ease;

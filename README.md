@@ -166,7 +166,7 @@ Tu servidor deberá contar con las siguientes rutas:
 
 <br />
 
----
+---   
 
 <br />
 
@@ -198,7 +198,6 @@ Se debe desarrollar una aplicación utilizando **React** y **Redux** que conteng
 **⚠️ IMPORTANTE:** debido a que en la API existen alrededor de 5.000 recetas, por cuestiones de performance puedes tomar la simplificación de obtener y **paginar** las primeras 100 recetas.
 
 <br />
-
 **📍 DETAIL PAGE |** en esta vista se deberá mostrar toda la información específica de una receta:
 
 -  ID.

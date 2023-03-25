@@ -1,17 +1,27 @@
-
+.nav {
+    width: 8.50%;
+}
 .containerNav {
-    width: 100px;
+    position: fixed;
+    width: 120px;
     padding: 10px;
-    height: 710px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 20px;
+    background-color: #f3f0d7cf;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    animation: nav 1s ease 0s 1 normal forwards;
 }
 
 .logoLanding {
     display: flex;justify-content: center;align-items: center;
     margin-top: 20px;
 }
+
 .buttons {
     height: 50%;
     display: flex;
@@ -29,19 +39,26 @@
     border-radius: 15px;
 }
 .buttonNav:hover {
-    background-color: rgba(90, 24, 24, 0.282);
-    border: 1px solid rgba(54, 18, 18, 0.087);
+    background-color: rgba(80, 76, 70, 0.282);
+    border: 1px solid rgba(47, 45, 43, 0.663);
 }
 .ProfileLogout {
     height: 30%;
 }
 
 .icon {
-    color: rgba(21, 21, 41, 0.821);
+    color: #5E454B;
     font-size: 1.15em;
 }
+@keyframes nav {
+	0% {
+		transform: scale(0.5);
+	}
 
-
+	100% {
+		transform: scale(1);
+	}
+}
 @media screen and (max-width:1080px) {
 
 }

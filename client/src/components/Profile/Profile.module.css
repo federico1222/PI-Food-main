@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;900&display=swap');
 
 .containerProfile {
     display: flex;
@@ -14,21 +16,24 @@
 }
 
 .profile h1 {
-    font-size:1.50em;
+    font-size: 1.90em;
     line-height: 100%;
-    color: black;
+    color: rgba(0, 0, 0, 0.843);
+    font-family: 'Roboto';
 }
 
 .profile span {
-    color: rgba(231, 166, 53, 0.676);
+    color: #CEE5D0;
 }
 
 .profile p {
-    color: black;
-    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-size: 1.70em;
+    font-family: 'Work Sans';
+    font-weight: 500;
 }
 
-.imgProfile{
+.imgProfile {
     width: 70%;
     display: flex;
     justify-content: end;

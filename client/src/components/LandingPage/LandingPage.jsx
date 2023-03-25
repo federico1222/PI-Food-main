@@ -5,6 +5,7 @@ import Food from "../../assets/platoComida.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Login from "../Login/Login";
+import sponnocular from '../../assets/sponocular.png'
 
 const LandingPage = () => {
   const [selectedTag, setSelectedTag] = useState(null);
@@ -20,10 +21,10 @@ const LandingPage = () => {
           <img src={iconoLanding} alt="" />
         </div>
         <div className={styles.linksLanding}>
-        <p onClick={() => setSelectedTag("explore")}>EXPLORE</p>
-          <p onClick={() => setSelectedTag("app")}>API</p>
-          <p onClick={() => setSelectedTag("about")}>ABOUT ME</p>
-          <p onClick={() => setSelectedTag("contact")}>CONTACT US</p>
+        <button onClick={() => setSelectedTag("explore")}>EXPLORE</button>
+          <button onClick={() => setSelectedTag("app")}>API</button>
+          <button onClick={() => setSelectedTag("about")}>ABOUT ME</button>
+          <button onClick={() => setSelectedTag("contact")}>CONTACT US</button>
         </div>
         <div className={styles.LoginRegister}>
           <Login />
@@ -32,7 +33,7 @@ const LandingPage = () => {
       <div className={styles.containerLangindPage}>
         <div className={styles.colOne}>
           <h1>
-            Food         
+            FOOD         
           </h1>
           <h2>Discover Diets & <br /> Delicious Food</h2>
           <Link to={"/HomePage"}>
@@ -45,6 +46,22 @@ const LandingPage = () => {
       </div>
       {selectedTag && (
         <div className={styles.selectedInfo}>
+          {selectedTag === "explore" && (
+            <div className={styles.aboutme}>
+              <h1>EXPLORE</h1>
+              <p>
+                Mi aplicación es una herramienta fácil de usar para descubrir
+                nuevas recetas y encontrar inspiración para tus comidas diarias.
+                Se conecta directamente con la API de comidas Spoonacular para
+                ofrecerte una gran cantidad de opciones de recetas, con fotos
+                hermosas y una descripción detallada de cada plato. Puedes
+                buscar por palabras clave como tipo de comida, ingrediente o
+                tiempo de preparación, o navegar por nuestras colecciones
+                cuidadosamente seleccionadas de recetas populares, saludables o
+                temáticas para encontrar la receta perfecta para ti.
+              </p>
+            </div>
+          )}
           {selectedTag === "about" && (
             <div className={styles.aboutme}>
               <h1>About Me</h1>
@@ -63,19 +80,10 @@ const LandingPage = () => {
             </div>
           )}
           {selectedTag === "app" && (
-            <div className={styles.aboutme}>
+            <div className={styles.app}>
               <h1>API</h1>
-              <p>
-                Mi aplicación es una herramienta fácil de usar para descubrir
-                nuevas recetas y encontrar inspiración para tus comidas diarias.
-                Se conecta directamente con la API de comidas Spoonacular para
-                ofrecerte una gran cantidad de opciones de recetas, con fotos
-                hermosas y una descripción detallada de cada plato. Puedes
-                buscar por palabras clave como tipo de comida, ingrediente o
-                tiempo de preparación, o navegar por nuestras colecciones
-                cuidadosamente seleccionadas de recetas populares, saludables o
-                temáticas para encontrar la receta perfecta para ti.
-              </p>
+              <img src={sponnocular} alt="" width={'700px'}/>
+              <p>https://spoonacular.com/food-api</p>
             </div>
           )}
           {selectedTag === "contact" && (

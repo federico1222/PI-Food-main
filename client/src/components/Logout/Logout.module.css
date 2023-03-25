@@ -20,11 +20,11 @@
     box-shadow: none;
 }
 .divLogout button:hover{
-    background-color: rgba(90, 24, 24, 0.282);
+    background-color: #5e454b6b;
+    border: 1px solid #5E454B;
     border-radius: 15px;
-    border: 1px solid rgba(54, 18, 18, 0.087);
 }
 .icon {
     font-size: 1.80em;
-    color: rgba(33, 31, 31, 0.686);
+    color: #5E454B;
 }
