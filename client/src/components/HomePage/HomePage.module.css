@@ -126,16 +126,15 @@
 }
 
 .selectedRecipeContainer {
-    width: 50%;
+    width: 40%;
     height: 95%;
     margin: auto;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 10px;
     bottom: 0;
-    left: 0;
     backdrop-filter: blur(30px);
-    background-color: #cee5d057;
+    background-color: #D8B384;
     border-radius: 20px;
     display: flex;
     justify-content: space-around;

@@ -168,7 +168,7 @@ const HomePage = () => {
           </div>
           <div className={styles.buttons}>
             <button onClick={handleCloseRecipeDetails}>Close</button>
-            <Link to={"/DetailPage/" + selectedRecipe.id}>
+            <Link to={`/DetailPage/${selectedRecipe.id}`}>
               <button>View Details</button>
             </Link>
           </div>

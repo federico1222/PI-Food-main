@@ -6,12 +6,14 @@ import {
   ORDER_BY_HEALTH_SCORE,
   FILTER_BY_NAME,
   GET_DIETS,
+  GET_DETAIL_RECIPES,
 } from "./actions";
 
 const initialState = {
   recipes: [],
   allRecipes: [],
   diets: [],
+  detail:[],
 };
 
 const reducer = (state = initialState, action) => {
@@ -85,15 +87,21 @@ const reducer = (state = initialState, action) => {
             : diet.includes(action.payload)
         )
       );
-      //uso el método some() para recorrer todas las dietas de cada receta y verificar 
+      //uso el método some() para recorrer todas las dietas de cada receta y verificar
       //si alguna de ellas coincide con "action.payload". En cada iteración del some(),
       //verifico si la dieta tiene una propiedad "name" y, en caso afirmativo, uso esa
-      //propiedad para compararla con "action.payload". Si la dieta no tiene una propiedad 
+      //propiedad para compararla con "action.payload". Si la dieta no tiene una propiedad
       //"name", simplemente comparo la dieta completa con "action.payload".
       return {
         ...state,
         recipes:
           action.payload === "allRecipes" ? state.allRecipes : filteredDiets,
+      };
+          //--------------------------------GET_DETAIL_RECIPES--------------------------------\\
+    case GET_DETAIL_RECIPES:
+      return {
+        ...state,
+        detail: action.payload,
       };
     default:
       return {

@@ -6,12 +6,22 @@ export const FILTER_BY_DATABASE = "FILTER_BY_DATABASE";
 export const ORDER_BY_TITLE = "ORDER_BY_TITLE";
 export const ORDER_BY_HEALTH_SCORE = "ORDER_BY_HEALTH_SCORE";
 export const FILTER_BY_DIET = "FILTER_BY_DIET";
+export const GET_DETAIL_RECIPES = "GET_DETAIL_RECIPES";
 
 export function getRecipes() {
   return async function (dispatch) {
     var json = await axios.get("http://localhost:3001/recipes");
     return dispatch({
       type: "GET_RECIPES",
+      payload: json.data,
+    });
+  };
+}
+export function getRecipesDetail(id) {
+  return async function (dispatch) {
+    var json = await axios.get("http://localhost:3001/recipes/"+ id);
+    return dispatch({
+      type: "GET_DETAIL_RECIPES",
       payload: json.data,
     });
   };

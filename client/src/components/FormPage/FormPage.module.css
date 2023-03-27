@@ -1,11 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+
 .containerForm {
     padding: 10px;
     display: flex;
     flex-direction: row;
+    background-color: #D8B384;
 }
+
 .form {
     margin-left: 15px;
     width: 100%;
     border-radius: 15px;
     padding: 15px;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    background-color: #F3F0D7;
+    padding: 0;
+    padding-bottom: 40px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+
+.containerColor {
+    background-color: #CEE5D0;
+    width: 95%;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: containerColor 1s ease 0s 1 reverse forwards;
+}
+
+.imgForm img {
+    border-top-right-radius: 15px;
+}
+
+.tituloForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.titulo {
+    margin-left: 30px;
+}
+
+.titulo h1 {
+    font-size: 7em;
+    color: #F3F0D7;
+    font-family: 'Lalezar', cursive;
+    line-height: 80%;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.24);
+}
+
+.titulo p {
+    font-family: 'Work Sans';
+    font-size: 1.40em;
+    font-weight: 700;
+
+}
+
+.formRecipes {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.slogan {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    animation: form 1s ease 0s 1 normal forwards;
+}
+
+.Form {
+    animation: form 1s ease 0s 1 normal forwards;
+
+}
+
+.formRecipes h1 {
+    font-size: 5em;
+    color: #CEE5D0;
+    font-family: 'Lalezar', cursive;
+    line-height: 80%;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.24);
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputDiv input {
+    width: 700px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    outline: none;
+    font-size: 1em;
+}
+
+.inputDiv ::placeholder {
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 1.50em;
+    padding-left: 10px;
+}
+
+.inputDiv input:hover {
+    border: 3px solid #D8B384;
+}
+
+.inputDiv select {
+    width: 700px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    outline: none;
+    font-size: 1em;
+}
+
+.listDiet {
+    width: 700px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+}
+
+.optionsDiet {
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 1.50em;
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    color: black;
+    background-color: #D8B384;
+    margin: 10px;
+}
+
+.inputDiv button {
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: #5E454B;
+    color: white;
+    border: none;
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 1.30em;
+}
+
+.inputDiv button:hover {
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+}
+
+@keyframes containerColor {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+}
+
+@keyframes form {
+    0% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
