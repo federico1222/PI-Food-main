@@ -89,7 +89,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    animation: form 1s ease 0s 1 normal forwards;
+    animation: slogan 1s ease 0s 1 normal forwards;
 }
 
 .Form {
@@ -150,6 +150,9 @@
     -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
     outline: none;
     font-size: 1em;
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 1.50em;
 }
 
 .listDiet {
@@ -171,6 +174,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     border-radius: 15px;
     color: black;
     background-color: #D8B384;
@@ -216,4 +220,15 @@
     100% {
         transform: scale(1);
     }
+}
+@keyframes slogan {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }

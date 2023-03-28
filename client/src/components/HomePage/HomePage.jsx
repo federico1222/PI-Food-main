@@ -78,7 +78,7 @@ const HomePage = () => {
           <div className={styles.publicidadtext}>
             <img src={publicidad1} alt="" />
           </div>
-          <img src={publicidad} alt="" />
+          <div className={styles.publicidadtext2}><img src={publicidad} alt="" /></div>
         </div>
         <div className={styles.containerDiets}>
           <h2>Diets</h2>

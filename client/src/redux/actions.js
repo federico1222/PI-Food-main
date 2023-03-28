@@ -77,7 +77,6 @@ export function orderByDiets(payload) {
 export function createRecipe(payload) {
   return async function (dispatch) {
     const response = await axios.post("http://localhost:3001/recipes", payload);
-    console.log(response);
     return response;
   };
 }

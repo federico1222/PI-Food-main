@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;900&display=swap');
 
 .welcome {
     border-radius: 15px;
@@ -9,6 +8,29 @@
     -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
     animation: profile 1s ease 0s 1 reverse forwards;
 }
+.myRecipe {
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    animation: profile 1s ease 0s 1 reverse forwards;
+}
+
+.myRecipe h1 {
+    font-size: 5em;
+    color:#5E454B;
+    font-family: 'Lalezar', cursive;
+    line-height: 80%;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.24);
+}
+.myRecipe p {
+    font-family: 'Work Sans';
+    font-weight: 700;
+    font-size: 1.50em;
+    padding-left: 10px;
+}
+
 .containerProfile {
     display: flex;
     flex-direction: row;
@@ -40,6 +62,7 @@
     font-family: 'Work Sans';
     font-weight: 500;
 }
+
 .container {
     padding: 10px;
     display: flex;
@@ -61,12 +84,15 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 50px;
+    animation: detailImg 1s ease 0s 1 normal forwards;
+
 }
-.spinner{
+
+.spinner {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 950px;
+    height: 350px;
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
@@ -74,14 +100,27 @@
     -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
     animation: profile 1s ease 0s 1 reverse forwards;
 }
+.imgDetail {
+    border: 1px solid red;
+}
+
 @keyframes profile {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+}
+@keyframes detailImg {
 	0% {
-		opacity: 1;
-		transform: translateX(0);
+		transform: scale(0.5);
 	}
 
 	100% {
-		opacity: 0;
-		transform: translateX(-250px);
+		transform: scale(1);
 	}
 }

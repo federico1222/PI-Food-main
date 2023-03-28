@@ -224,7 +224,7 @@
 
 	100% {
 		opacity: 0;
-		transform: translateX(-250px);
+		transform: translateX(250px);
 	}
 }
 
@@ -247,4 +247,33 @@
 		opacity: 0;
 		transform: translateY(250px);
 	}
+}
+@media screen and (max-width:1100px) {
+    .publicidad {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+    .publicidadtext{
+        content:url("../../assets/publicidad1chico.png");
+        width: 230px;
+    }
+    .publicidadtext2 {
+        content:url("../../assets/publicidadChico.png");
+    }
+    .filters select {
+        width: 80%;
+        height: 50px;
+        font-size: 1em;
+    }
+   
+    .filters input {
+        width: 80%;
+        height: 50px;
+        font-size: 1em;
+    }
 }

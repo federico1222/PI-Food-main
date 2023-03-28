@@ -28,4 +28,9 @@
 }
 
 
-
+@media screen and (max-width:1000px) {
+    .containerRecipes {
+    font-size: 0.50em;
+    height: 100px;
+    }
+}

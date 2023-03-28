@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+
 .containerPaginado {
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap:30px;
+    gap: 30px;
 }
 
 .buttonPaginado {
@@ -20,6 +21,22 @@
     color: white;
     margin: 5px;
 }
+
 .buttonPaginado:hover {
     color: black;
+}
+
+@media screen and (max-width:1000px) {
+    .containerPaginado {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .buttonPaginado {
+        width: 30px;
+        height: 30px;
+        border-radius: 7px;
+        font-size: 1em;
+
+    }
 }

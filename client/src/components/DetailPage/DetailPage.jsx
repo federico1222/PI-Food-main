@@ -14,7 +14,7 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const myRecipe = useSelector((state) => state.detail);
-  const { user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const { user, isAuthenticated} = useAuth0();
 
   useEffect(() => {
     setLoading(true);
@@ -60,13 +60,16 @@ const DetailPage = () => {
             <SpinnerRoundOutlined color="#5E454B" />
           </div>
         ) : (
-          <div className={styles.welcome}>
+          <div className={styles.myRecipe}>
+            <div className={styles.imgDetail}>
+              <img src="" alt="" />
+            </div>
+            <h1>Detail Recipe</h1>
+            <img src={myRecipe.Imagen} alt="" />
+            <hr />
             <p>{myRecipe.id}</p>
             <hr />
             <p>{myRecipe.title}</p>
-            <hr />
-            <img src={myRecipe.Image} alt="" />
-            <hr />
             <p>{myRecipe.SumamaryOfTheDish}</p>
             <hr />
             <p>{myRecipe.HealthyFoodLevel}</p>
