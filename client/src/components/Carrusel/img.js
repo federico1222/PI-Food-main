@@ -37,7 +37,7 @@ const diets = [
   },
   {
     src: require("../../assets/diet10.png"),
-    value:"primal"
+    value:"fodmap friendly"
   },
   {
     src: require("../../assets/diet11.png"),

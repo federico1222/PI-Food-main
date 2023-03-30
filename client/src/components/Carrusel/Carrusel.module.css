@@ -1,15 +1,20 @@
-.container {
+.carruselItems {
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow-y: hidden;
   overflow-x: hidden;
+  margin: 8px;
   max-width: 1350px;
-  width: 100%;
-  
 }
 
-.buttonA {
+.carruselItem {
+  object-fit: cover;
+  margin: 3px;
+}
+.carruselItem:hover {
+ transform: scale(1.03);
+}
+
+/* .buttonA {
   font-size: 60px;
   border: none;
   color:#5e454b7e;
@@ -22,5 +27,5 @@
 .slide:hover {
   transform: scale(1.04);
   transition: transform 0.3s ease;
-}
+} */
   

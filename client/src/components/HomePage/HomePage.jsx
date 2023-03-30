@@ -15,7 +15,6 @@ import {
 import Recipes from "../Recipes/Recipes";
 import Paginado from "../Paginado/Paginado";
 // import SearchBar from '../SearchBar/SearchBar'
-import { SpinnerRoundOutlined } from "spinners-react";
 import publicidad from "../../assets/publicidad.png";
 import publicidad1 from "../../assets/publicidad1.png";
 
@@ -90,8 +89,8 @@ const HomePage = () => {
           <h2>Explore Our Recipes</h2>
           <div className={styles.filters}>
             <select onChange={(e) => filterByTitle(e)}>
-              <option value="asc">Ascendentemente</option>
-              <option value="desc">Descendentemente</option>
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
             </select>
             <select
               name="health-score"
@@ -127,8 +126,8 @@ const HomePage = () => {
           </div>
           <div>
             {loading ? (
-              <div className={styles.spinner}>
-                <SpinnerRoundOutlined color="#5E454B" />
+              <div className={styles.containerSpinner}>      
+              <div className={styles.spinner}></div>       
               </div>
             ) : (
               currentRecipes
@@ -159,18 +158,22 @@ const HomePage = () => {
         <div className={styles.selectedRecipeContainer}>
           <div className={styles.selectedRecipeContainerInfo}>
             <img src={selectedRecipe.Imagen} alt="" />
+            {selectedRecipe.veryPopular === true ?
+            <p className={styles.star}>★★★★★</p> :
+            <p className={styles.star}>★★</p> 
+            }
             <h1>{selectedRecipe.title}</h1>
             <div className={styles.diets1}>
               {selectedRecipe.Diets?.map((diet, i) => {
                 return <p key={i}>{diet.name ? diet.name : diet}</p>;
               })}
             </div>
-          </div>
-          <div className={styles.buttons}>
+                      <div className={styles.buttons}>
             <button onClick={handleCloseRecipeDetails}>Close</button>
             <Link to={`/DetailPage/${selectedRecipe.id}`}>
               <button>View Details</button>
             </Link>
+          </div>
           </div>
         </div>
       )}

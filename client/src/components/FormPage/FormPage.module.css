@@ -105,6 +105,7 @@
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.24);
 }
 
+
 .inputDiv {
     display: flex;
     justify-content: center;
@@ -112,7 +113,12 @@
     flex-direction: column;
     width: 100%;
 }
-
+.error {
+    color: red;
+    text-align: start;
+    font-size: 1.50em;
+    font-family: 'Work Sans';
+}
 .inputDiv input {
     width: 700px;
     height: 50px;

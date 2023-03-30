@@ -11,10 +11,11 @@ const getApi = async () => {
       id: recipe.id,
       title: recipe.title,
       Imagen: recipe.image,
-      SumamaryOfTheDish: recipe.summary,
+      SumamaryOfTheDish: recipe.summary.replace(/(<([^>]+)>)/gi),
+      veryPopular:recipe.veryPopular,
       HealthyFoodLevel: recipe.healthScore,
       StepByStep: recipe.analyzedInstructions?.map((instrucciones) =>
-        instrucciones.steps?.map((steps) => steps.step)
+      instruccionesSeparadasPorRenglon = instrucciones.steps?.map((steps, index) => `${index + 1}. ${steps.step}\n`).join("")
       ),
       Diets: recipe.diets,
     };

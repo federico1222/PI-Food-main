@@ -1,5 +1,7 @@
 .nav {
     width: 8.50%;
+    display: flex;
+    justify-content: center;
 }
 .containerNav {
     position: fixed;

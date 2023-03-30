@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
-import { createRecipe, getDiets} from "../../redux/actions";
+import { createRecipe, getDiets } from "../../redux/actions";
 import styles from "../FormPage/FormPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgForm from "../../assets/imfForm.png";
@@ -30,6 +30,9 @@ const validation = (input) => {
   if (!input.StepByStep) {
     errors.StepByStep = "Los pasos de la receta son obligatorios";
   }
+  if (input.diets.length === 0) {
+    errors.diets = "Debe seleccionar al menos una dieta";
+  }
 
   return errors;
 };
@@ -58,15 +61,13 @@ const FormPage = () => {
       ...input,
       diets: [...input.diets, event.target.value],
     });
+    setErrors({ ...errors, diets: "" }); // resetear el error de las dietas
   }
   function handleSubmit(event) {
     event.preventDefault();
     const errors = validation(input);
-    if (Object.keys(errors).length > 0) {
-      // Si hay errores, mostrarlos al usuario
-      alert('Por favor corrige los siguientes errores:\n\n' + Object.values(errors).join('\n'));
-    } else {
-      // Si no hay errores, enviar el formulario
+    setErrors(errors); // establecer los errores del formulario
+    if (Object.keys(errors).length === 0) {
       dispatch(createRecipe(input));
       alert("Recipes create!");
       setInput({
@@ -77,9 +78,10 @@ const FormPage = () => {
         StepByStep: "",
         diets: [],
       });
+      setErrors({}); // resetear los errores del formulario
     }
   }
-  
+
   useEffect(() => {
     dispatch(getDiets());
   }, [dispatch]);
@@ -123,6 +125,7 @@ const FormPage = () => {
                 name="title"
                 placeholder="Title..."
               />
+              {errors.title && <p className={styles.error}>{errors.title}</p>}
             </div>
             <div className={styles.inputDiv}>
               <input
@@ -132,6 +135,7 @@ const FormPage = () => {
                 name="Imagen"
                 placeholder="Url image..."
               />
+              {errors.Imagen && <p className={styles.error}>{errors.Imagen}</p>}
             </div>
             <div className={styles.inputDiv}>
               <input
@@ -141,6 +145,9 @@ const FormPage = () => {
                 onChange={handleChange}
                 placeholder="SumaryOfTheDish..."
               />
+              {errors.SumamaryOfTheDish && (
+                <p className={styles.error}>{errors.SumamaryOfTheDish}</p>
+              )}
             </div>
             <div className={styles.inputDiv}>
               <input
@@ -150,6 +157,9 @@ const FormPage = () => {
                 onChange={handleChange}
                 placeholder="HealthyFoodLevel..."
               />
+              {errors.HealthyFoodLevel && (
+                <p className={styles.error}>{errors.HealthyFoodLevel}</p>
+              )}
             </div>
             <div className={styles.inputDiv}>
               <input
@@ -159,6 +169,9 @@ const FormPage = () => {
                 onChange={handleChange}
                 placeholder="StepByStep..."
               />
+                            {errors.StepByStep && (
+                <p className={styles.error}>{errors.StepByStep}</p>
+              )}
             </div>
             <div className={styles.inputDiv}>
               <select onChange={(event) => handleSelect(event)}>

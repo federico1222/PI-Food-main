@@ -1,66 +1,62 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./Carrusel.module.css";
 import diets from "./img";
-import { TbSquareRoundedArrowLeftFilled,TbSquareRoundedArrowRightFilled } from 'react-icons/tb';
 
 const Carrusel = () => {
-  const [currentImage, setCurrentImage] = useState(4); 
-  const [slideClass, setSlideClass] = useState(""); 
+  const carruselRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (slideClass) {
-      setTimeout(() => {
-        setSlideClass("");
-      }, 500); 
-    }
-  }, [slideClass]);
+    const carrusel = carruselRef.current;
+    let interval = null;
+    let step = 1;
 
-  const handlePrev = () => {
-    setCurrentImage(
-      currentImage === 4 
-        ? diets.length - 1
-        : currentImage - 1
-    );
-    setSlideClass(styles.slideRight); 
-  };
-
-  const handleNext = () => {
-    setCurrentImage(
-      currentImage === diets.length - 1 
-        ? 4
-        : currentImage + 1
-    );
-    setSlideClass(styles.slideLeft); 
-  };
-
-  return (
-    <div className={styles.container}>
-      <button onClick={handlePrev} className={styles.buttonA}><TbSquareRoundedArrowLeftFilled/></button>
-      <div className={styles.slider}>
-        {
-          diets.slice(currentImage - 4, currentImage + 1).map((element, i)=> { 
-            return(
-              <img 
-                src={element.src} 
-                alt="" 
-                key={i} 
-                className={`${styles.slide} ${slideClass}`} 
-              />
-            )
-          })
+    const start = () => {
+      interval = setInterval(() => {
+        carrusel.scrollLeft += step;
+        if (
+          carrusel.scrollLeft >=
+          carrusel.scrollWidth - carrusel.clientWidth
+        ) {
+          carrusel.scrollLeft = 0;
         }
-      </div>
-      <button onClick={handleNext} className={styles.buttonA}><TbSquareRoundedArrowRightFilled/></button>
+      }, 40);
+    };
+
+    const stop = () => {
+      clearInterval(interval);
+    };
+
+    if (!isPaused) {
+      start();
+    }
+
+    return () => {
+      stop();
+    };
+  }, [isPaused]);
+
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+  return (
+    <div
+      className={styles.carruselItems}
+      ref={carruselRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {diets.map((element, i) => (
+        <div key={i} className={styles.carruselItem}>
+          <img className={styles.img} src={element.src} alt="" />
+        </div>
+      ))}
     </div>
   );
 };
 
 export default Carrusel;
-
-
-
-
-
-
-
-

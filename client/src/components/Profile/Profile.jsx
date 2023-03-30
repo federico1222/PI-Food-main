@@ -25,7 +25,7 @@ const Profile = () => {
     <div className={styles.containerProfile}>
       <div className={styles.profile}>
         <h1>
-          <span>Hello</span>
+          <span>Hello Chef</span>
         </h1>
         <p>
           Welcome our plataform, Sing up{" "}
