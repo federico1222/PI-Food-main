@@ -7,7 +7,6 @@ import { getRecipesDetail } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import platoDiets from "../../assets/platoDiets.png";
 import { Link } from "react-router-dom";
 import detailPageTitulo from "../../assets/DETAILPAGETITUTLO.png";
 import diet1 from "../../assets/diet1.png";

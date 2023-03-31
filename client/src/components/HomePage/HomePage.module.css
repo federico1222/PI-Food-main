@@ -34,21 +34,16 @@
 }
 .publicidad {
     margin-top: 15px;
-    margin-bottom: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-radius: 15px;
     animation: publicidad 1s ease 0s 1 normal forwards;
-
-}
-.publicidadtext {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    gap: 10px;
 }
 
+.publicidad img:hover {
+    transform: scale(1.01);
+   }
 .publicidad h3 {
     font-family: 'Work Sans';
     font-size: 2em;
@@ -74,7 +69,7 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     gap: 20px;
 }
 .diets {
@@ -285,12 +280,9 @@
     .filters {
         flex-wrap: wrap;
     }
-    .publicidadtext{
+    .publicidad{
         content:url("../../assets/publicidad1chico.png");
-        width: 230px;
-    }
-    .publicidadtext2 {
-        content:url("../../assets/publicidadChico.png");
+        box-shadow: none;
     }
     .filters select {
         width: 80%;

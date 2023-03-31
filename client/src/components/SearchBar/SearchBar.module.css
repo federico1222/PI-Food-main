@@ -1,8 +1,8 @@
 .filters input {
-    width: 200px;
+    width: 400px;
     height: 60px;
     border: 1px solid #5E454B;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: transparent;
     text-decoration: none;
     padding-left: 10px;
@@ -21,10 +21,10 @@
 }
 
 .filters button {
-    width: 100px;
+    width: 150px;
     height: 60px;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: #5E454B;
     color: white;
     padding: 10px;

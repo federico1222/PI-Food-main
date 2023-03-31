@@ -14,9 +14,9 @@ import {
 } from "../../redux/actions";
 import Recipes from "../Recipes/Recipes";
 import Paginado from "../Paginado/Paginado";
-// import SearchBar from '../SearchBar/SearchBar'
-import publicidad from "../../assets/publicidad.png";
-import publicidad1 from "../../assets/publicidad1.png";
+import SearchBar from '../SearchBar/SearchBar'
+import publicidad1 from "../../assets/detailimg.png";
+import publicidad2 from "../../assets/detailimg1.png";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -74,10 +74,14 @@ const HomePage = () => {
           <Profile />
         </div>
         <div className={styles.publicidad}>
-          <div className={styles.publicidadtext}>
+          <Link to={'/Favorite'}>
+            {" "}
             <img src={publicidad1} alt="" />
-          </div>
-          <div className={styles.publicidadtext2}><img src={publicidad} alt="" /></div>
+          </Link>
+          <Link to={'/FormPage'}>
+            {" "}
+            <img src={publicidad2} alt="" />{" "}
+          </Link>
         </div>
         <div className={styles.containerDiets}>
           <h2>Diets</h2>
@@ -116,18 +120,18 @@ const HomePage = () => {
               <option value="fodmap friendly">Low FoodMap</option>
               <option value="allRecipes">All Recipes</option>
             </select>
-            {/* <SearchBar/> */}
-            <input
+            <SearchBar/>
+            {/* <input
               type="text"
               placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-            />
+            /> */}
           </div>
           <div>
             {loading ? (
-              <div className={styles.containerSpinner}>      
-              <div className={styles.spinner}></div>       
+              <div className={styles.containerSpinner}>
+                <div className={styles.spinner}></div>
               </div>
             ) : (
               currentRecipes
@@ -158,22 +162,23 @@ const HomePage = () => {
         <div className={styles.selectedRecipeContainer}>
           <div className={styles.selectedRecipeContainerInfo}>
             <img src={selectedRecipe.Imagen} alt="" />
-            {selectedRecipe.veryPopular === true ?
-            <p className={styles.star}>★★★★★</p> :
-            <p className={styles.star}>★★</p> 
-            }
+            {selectedRecipe.veryPopular === true ? (
+              <p className={styles.star}>★★★★★</p>
+            ) : (
+              <p className={styles.star}>★★</p>
+            )}
             <h1>{selectedRecipe.title}</h1>
             <div className={styles.diets1}>
               {selectedRecipe.Diets?.map((diet, i) => {
                 return <p key={i}>{diet.name ? diet.name : diet}</p>;
               })}
             </div>
-                      <div className={styles.buttons}>
-            <button onClick={handleCloseRecipeDetails}>Close</button>
-            <Link to={`/DetailPage/${selectedRecipe.id}`}>
-              <button>View Details</button>
-            </Link>
-          </div>
+            <div className={styles.buttons}>
+              <button onClick={handleCloseRecipeDetails}>Close</button>
+              <Link to={`/DetailPage/${selectedRecipe.id}`}>
+                <button>View Details</button>
+              </Link>
+            </div>
           </div>
         </div>
       )}

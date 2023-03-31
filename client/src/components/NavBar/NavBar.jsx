@@ -29,12 +29,14 @@ const NavBar = () => {
             </Link>
           </div>
           <div className={styles.buttonNav}>
-            <Link>
+            <Link to={"/Diets"}>
               <MdOutlineFoodBank className={styles.icon} />
             </Link>
           </div>
           <div className={styles.buttonNav}>
-            <MdOutlineFavorite className={styles.icon} />
+            <Link to={"/FavoritePage"}>
+              <MdOutlineFavorite className={styles.icon} />
+            </Link>
           </div>
         </div>
         <div className={styles.ProfileLogout}>

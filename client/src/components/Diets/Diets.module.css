@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+.container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: #D8B384;
+}
+
+.detailPage {
+    margin-left: 15px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #F3F0D7;
+}
+
+.containerProfile {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 95%;
+    height: 150px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    animation: profile 1s ease 0s 1 reverse forwards;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 50%;
+}
+
+.profile h1 {
+    font-size: 1.90em;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.843);
+    font-family: 'Roboto';
+}
+
+.profile span {
+    color: #D8B384;
+}
+
+.profile p {
+    color: rgb(0, 0, 0);
+    font-size: 1.70em;
+    font-family: 'Work Sans';
+    font-weight: 500;
+}
+
+.imgDetail {
+    border-radius: 10px;
+    height: 800px;
+    background-image: url(../../assets/image-from-rawpixel-id-3249020-jpeg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+}
+
+.tituloDetail {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 10px;
+    animation: profile 1s ease 0s 1 reverse forwards;
+}
+
+.tituloDetail button {
+    width: 250px;
+    height: 70px;
+    border-radius: 15px;
+    border: none;
+    background-color: #D8B384;
+    font-size: 1.30em;
+    font-family: 'Work Sans';
+    font-weight: 700;
+}
+
+.tituloDetail button:hover {
+    background-color: #1F1F1F;
+    color: #D8B384;
+}
+
+.containerDiets {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.diet {
+    width: 100%;
+    height: 250px;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    background-image: url(../../assets/fondoDiets.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.diet h1 {
+    font-size: 3.50em;
+    font-family: 'Work Sans';
+    color: #D8B384;
+}
+.diet p {
+    color: white;
+    font-size: 1.30em;
+
+}
+
+
+
+@keyframes profile {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-250px);
+    }
+}
+

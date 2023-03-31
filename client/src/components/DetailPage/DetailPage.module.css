@@ -39,7 +39,7 @@
 }
 
 .tituloDetail button:hover {
-    background-color: black;
+    background-color: #1F1F1F;
     color: #D8B384;
 }
 
@@ -219,35 +219,6 @@
     font-family: 'Lalezar';
     font-size: 3.60em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @keyframes spinner-d3wgkg {
     to {

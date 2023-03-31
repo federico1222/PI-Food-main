@@ -7,7 +7,7 @@
     position: fixed;
     width: 120px;
     padding: 10px;
-    height: 600px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,10 +27,10 @@
 .buttons {
     height: 50%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 .buttonNav{
     width: 70%;
@@ -50,7 +50,7 @@
 
 .icon {
     color: #5E454B;
-    font-size: 1.15em;
+    font-size: 1.60em;
 }
 @keyframes nav {
 	0% {
