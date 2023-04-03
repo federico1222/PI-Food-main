@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.containerHome {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.home {
+    width: 100%;
+}
+.slogan {
+    display: flex;
+    justify-content: center;
+}
+.containerRecipes {
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 99%;
+}
+.containerRecipesFav {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+}
+
+.containerRecipesFav button {
+    width: 210px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: #5E454B;
+    color: white;
+    padding: 10px;
+    font-family: 'Work Sans';
+    font-size: 1.23em;
+    outline: none;
+    text-decoration: none;
+}
+.containerRecipesFav button:hover {
+    box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 12px -3px rgba(0, 0, 0, 0.75);
+}

@@ -3,11 +3,26 @@
 
 
 body {
-    background-image: url(../../assets/fondoLangind1.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F0D7;
 }
+
+body::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 50%;
+    background-color: #CEE5D0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(180deg);
+    clip-path: circle(61% at 0 50%);
+    /* Aplicamos un clip-path circular */
+}
+
 
 .containerNav {
     width: 92%;
@@ -15,8 +30,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 40px;
     animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+.dropdown {
+    display: none;
 }
 
 .logoLanding {
@@ -43,6 +62,7 @@ body {
     border: none;
     background-color: transparent;
 }
+
 .linksLanding button:hover {
     border-bottom: 1px solid #D8B384;
 }
@@ -86,6 +106,7 @@ body {
     font-family: 'Lalezar', cursive;
     line-height: 50%;
 }
+
 .colOne h2 {
     font-size: 4em;
     font-family: 'Work Sans';
@@ -93,12 +114,12 @@ body {
     line-height: 100%;
 }
 
-.colOne .buttona {
+.buttona {
     margin-top: 20px;
     width: 150px;
     height: 50px;
     border-radius: 15px;
-    background-color:#CEE5D0;
+    background-color: #CEE5D0;
     color: black;
     font-weight: 900;
     border: none;
@@ -183,6 +204,7 @@ p:visited {
 .aboutme p {
     font-size: 1.40em;
 }
+
 .app {
     display: flex;
     justify-content: center;
@@ -191,51 +213,184 @@ p:visited {
     font-size: 1.40em;
     color: #D8B384;
 }
+
 .app p {
     color: black;
 }
+
 .app img {
     border-radius: 20px;
 }
+
 @keyframes aboutme {
-	0% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-	100% {
-		opacity: 0;
-		transform: translateY(250px);
-	}
+    100% {
+        opacity: 0;
+        transform: translateY(250px);
+    }
 }
+
 @keyframes myAnim {
-	0% {
-		transform: scale(0.5);
-	}
+    0% {
+        transform: scale(0.5);
+    }
 
-	100% {
-		transform: scale(1);
-	}
+    100% {
+        transform: scale(1);
+    }
 }
+
 @keyframes col {
-	0% {
-		opacity: 1;
-		transform: rotate(0) scale(1);
-	}
+    0% {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
 
-	100% {
-		opacity: 0;
-		transform: rotate(-540deg) scale(0);
-	}
+    100% {
+        opacity: 0;
+        transform: rotate(-540deg) scale(0);
+    }
 }
-@media screen and (max-width:1000px) {
-    .containerLanding {
+
+/* Estilos para dispositivos móviles grandes */
+@media (min-width: 360px) and (max-width: 640px) {
+    /* Aquí se definen los estilos CSS para pantallas con un ancho mínimo de 481px y un ancho máximo de 640px */
+    .containerLangindPage {
         flex-direction: column;
     }
-
-    .containerLogin {
-        border-radius: 15px;
-        border: 1px solid rgb(14, 15, 41);
-        color: rgb(14, 15, 41);
+    .colOne{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    .colOne h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .colTwo{
+        width: 100%;
+        padding-left: 25px;
+    }
+
+}
+
+/* Estilos para tablets */
+@media (min-width: 641px) and (max-width: 1023px) {
+
+    /* Aquí se definen los estilos CSS para pantallas con un ancho mínimo de 641px y un ancho máximo de 768px */
+
+    body::before {
+        clip-path: circle(39% at 0 57% );
+    }
+
+    .colOne h1 {
+        font-size: 6em;
+    }
+
+    .colOne h2 {
+        font-size: 2em;
+    }
+
+
+}
+
+
+/* Estilos para laptops */
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    /* Aquí se definen los estilos CSS para pantallas con un ancho mínimo de 1024px y un ancho máximo de 1366px */
+    body::before {
+        clip-path: circle(55% at 0 50%);
+    }
+
+    .linksLanding button {
+        font-size: 1em;
+    }
+
+    .colOne h1 {
+        font-size: 8em;
+    }
+
+    .colOne h2 {
+        font-size: 2.50em;
+    }
+
+    .colTwo {
+        content: url("../../assets/platoComida1.png");
+    }
+
+    .containerNav {
+        margin-top: 30px;
+    }
+
+}
+@media (min-width: 360px) and (max-width: 1023px) {
+    .linksLanding {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .login {
+        display: none;
+    }
+    .colTwo {
+        content: url("../../assets/platoComida1.png");
+        position: relative;
+        z-index: -1;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdownToggle {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 30px;
+        color: #5E454B;
+    }
+
+    .dropdownMenu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 160px;
+        background-color: transparent;
+    }
+
+    .menuList {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align:right;
+        background-color: #cee5d092;
+        backdrop-filter: blur(30px);
+        border-radius: 15px;
+        box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.232);
+        -webkit-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.327);
+        -moz-box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.246);
+    }
+
+    .menuList li {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .menuList li:last-child {
+        border-bottom: none;
+    }
+    body::before {
+        width: 100%;
+    }
+
 }

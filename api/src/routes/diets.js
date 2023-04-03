@@ -7,9 +7,12 @@ router.get("/", async (req, res) => {
   try {
     const diets = await getAlldiets();
     for (const Diet of diets) {
-      await Diets.findOrCreate({
+      const diet = await Diets.findOne({
         where: { name: Diet },
       });
+      if (!diet) {
+        await Diets.create({ name: Diet });
+      }
     }
     const allDiets = await Diets.findAll();
     res.send(allDiets.map((element) => element));
@@ -18,6 +21,7 @@ router.get("/", async (req, res) => {
     res.status(500).send("Error al agregar las dietas");
   }
 });
+
 
 // 1-el código itera sobre cada dieta y utiliza el método "findOrCreate()" 
 // del modelo Diets para buscar una dieta existente con el nombre correspondiente o 

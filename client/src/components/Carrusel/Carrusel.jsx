@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./Carrusel.module.css";
 import diets from "./img";
+import { Link } from "react-router-dom";
 
 const Carrusel = () => {
   const carruselRef = useRef(null);
@@ -20,7 +21,7 @@ const Carrusel = () => {
         ) {
           carrusel.scrollLeft = 0;
         }
-      }, 40);
+      }, 30);
     };
 
     const stop = () => {
@@ -51,9 +52,11 @@ const Carrusel = () => {
       onMouseLeave={handleMouseLeave}
     >
       {diets.map((element, i) => (
+        <Link key={i} to={'/Diets'}>
         <div key={i} className={styles.carruselItem}>
           <img className={styles.img} src={element.src} alt="" />
         </div>
+        </Link>
       ))}
     </div>
   );

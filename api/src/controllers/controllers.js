@@ -4,7 +4,7 @@ const { API_KEY } = process.env;
 
 const getApi = async () => {
   const apiUrl = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
+    `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
   );
   const apiInfo = await apiUrl.data.results?.map((recipe) => {
     return {
@@ -12,10 +12,13 @@ const getApi = async () => {
       title: recipe.title,
       Imagen: recipe.image,
       SumamaryOfTheDish: recipe.summary.replace(/(<([^>]+)>)/gi),
-      veryPopular:recipe.veryPopular,
+      veryPopular: recipe.veryPopular,
       HealthyFoodLevel: recipe.healthScore,
-      StepByStep: recipe.analyzedInstructions?.map((instrucciones) =>
-      instruccionesSeparadasPorRenglon = instrucciones.steps?.map((steps, index) => `${index + 1}. ${steps.step}\n`).join("")
+      StepByStep: recipe.analyzedInstructions?.map(
+        (instrucciones) =>
+          (instruccionesSeparadasPorRenglon = instrucciones.steps
+            ?.map((steps, index) => `${index + 1}. ${steps.step}\n`)
+            .join(""))
       ),
       Diets: recipe.diets,
     };
@@ -75,7 +78,10 @@ const createdRecipe = async (
     StepByStep,
     createInDb,
   });
-
+  
+  // se utiliza el método findOrCreate de Sequelize para buscar o 
+  // crear una instancia de la tabla Diets que tenga el mismo 
+  // nombre que el elemento actual del arreglo. 
   const dietPromises = diets.map(async (diet) => {
     let dietInstance = await Diets.findOrCreate({
       where: { name: diet },

@@ -5,10 +5,16 @@ import Food from "../../assets/platoComida.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Login from "../Login/Login";
-import sponnocular from '../../assets/sponocular.png'
+import sponnocular from "../../assets/sponocular.png";
+import { TiThMenuOutline } from "react-icons/ti";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   const [selectedTag, setSelectedTag] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen); // Invertimos el estado actual de isOpen al hacer clic en el botón
+  };
 
   const handleCloseGameDetails = () => {
     setSelectedTag(null);
@@ -21,21 +27,37 @@ const LandingPage = () => {
           <img src={iconoLanding} alt="" />
         </div>
         <div className={styles.linksLanding}>
-        <button onClick={() => setSelectedTag("explore")}>EXPLORE</button>
+          <button onClick={() => setSelectedTag("explore")}>EXPLORE</button>
           <button onClick={() => setSelectedTag("app")}>API</button>
           <button onClick={() => setSelectedTag("about")}>ABOUT ME</button>
           <button onClick={() => setSelectedTag("contact")}>CONTACT US</button>
         </div>
-        <div className={styles.LoginRegister}>
+        <div className={styles.login}>
           <Login />
+        </div>
+        <div className={styles.dropdown}>
+          <button className={styles.dropdownToggle} onClick={toggleDropdown}>
+            <TiThMenuOutline />
+          </button>
+          {isOpen && (
+            <div className={styles.dropdownMenu}>
+              <ul className={styles.menuList}>
+                <li onClick={() => setSelectedTag("app")}>API</li>
+                <li onClick={() => setSelectedTag("explore")}>EXPLORE</li>
+                <li onClick={() => setSelectedTag("about")}>ABOUT ME</li>
+                <li onClick={() => setSelectedTag("contact")}>CONTACT US</li>
+                <Login />
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       <div className={styles.containerLangindPage}>
         <div className={styles.colOne}>
-          <h1>
-            FOOD         
-          </h1>
-          <h2>Discover Diets & <br /> Delicious Food</h2>
+          <h1>FOOD</h1>
+          <h2>
+            Discover Diets & <br /> Delicious Food
+          </h2>
           <Link to={"/HomePage"}>
             <button className={styles.buttona}>Explore</button>
           </Link>
@@ -82,7 +104,7 @@ const LandingPage = () => {
           {selectedTag === "app" && (
             <div className={styles.app}>
               <h1>API</h1>
-              <img src={sponnocular} alt="" width={'700px'}/>
+              <img src={sponnocular} alt="" width={"700px"} />
               <p>https://spoonacular.com/food-api</p>
             </div>
           )}

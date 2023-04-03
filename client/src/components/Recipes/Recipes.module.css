@@ -23,8 +23,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 50px;
+}
+.tituloButton button {
+    
 }
 @media screen and (max-width:1000px) {
     .containerRecipes {

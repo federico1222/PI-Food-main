@@ -61,3 +61,11 @@
 		transform: scale(1);
 	}
 }
+
+@media (min-width: 360px) and (max-width: 1700px) {
+
+    .containerNav {
+        display: none;
+    }
+    
+}

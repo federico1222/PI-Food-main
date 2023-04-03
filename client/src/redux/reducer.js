@@ -7,13 +7,17 @@ import {
   FILTER_BY_NAME,
   GET_DIETS,
   GET_DETAIL_RECIPES,
+  ALL_MY_FAVORITES,
+  DELETE_RECIPE,
+  INITIALIZE_FAVORITES,
 } from "./actions";
 
 const initialState = {
   recipes: [],
   allRecipes: [],
   diets: [],
-  detail:[],
+  detail: [],
+  MyFavorites: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -97,11 +101,31 @@ const reducer = (state = initialState, action) => {
         recipes:
           action.payload === "allRecipes" ? state.allRecipes : filteredDiets,
       };
-          //--------------------------------GET_DETAIL_RECIPES--------------------------------\\
+    //--------------------------------INITIALIZE_FAVORITES--------------------------------\\
+    case INITIALIZE_FAVORITES:
+      return {
+        ...state,
+        MyFavorites: action.payload,
+      };
+    //--------------------------------GET_DETAIL_RECIPES--------------------------------\\
     case GET_DETAIL_RECIPES:
       return {
         ...state,
         detail: action.payload,
+      };
+    //--------------------------------ALL_MY_FAVORITES--------------------------------\\
+    case ALL_MY_FAVORITES:
+      return {
+        ...state,
+        MyFavorites: [...state.MyFavorites, action.payload],
+      };
+    //--------------------------------DELETE_RECIPE--------------------------------\\
+    case DELETE_RECIPE:
+      return {
+        ...state,
+        MyFavorites: state.MyFavorites.filter(
+          (recipe) => recipe !== action.payload
+        ),
       };
     default:
       return {

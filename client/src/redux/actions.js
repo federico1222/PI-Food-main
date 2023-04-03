@@ -7,6 +7,9 @@ export const ORDER_BY_TITLE = "ORDER_BY_TITLE";
 export const ORDER_BY_HEALTH_SCORE = "ORDER_BY_HEALTH_SCORE";
 export const FILTER_BY_DIET = "FILTER_BY_DIET";
 export const GET_DETAIL_RECIPES = "GET_DETAIL_RECIPES";
+export const ALL_MY_FAVORITES = "ALL_MY_FAVORITES";
+export const DELETE_RECIPE = "ALL_MY_FAVORDELETE_RECIPEITES";
+export const INITIALIZE_FAVORITES = "INITIALIZE_FAVORITES";
 
 export function getRecipes() {
   return async function (dispatch) {
@@ -80,3 +83,15 @@ export function createRecipe(payload) {
     return response;
   };
 }
+export const initializeFavorites = (favorites) => ({
+  type: INITIALIZE_FAVORITES,
+  payload: favorites,
+});
+
+export const allMyFavorite = (recipe) => {
+  return { type: ALL_MY_FAVORITES, payload: recipe };
+};
+
+export const deleteRecipe = (recipe) => {
+  return { type: DELETE_RECIPE, payload: recipe };
+};
