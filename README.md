@@ -1,4 +1,4 @@
-![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
+![Captura de pantalla 2023-05-08 201322](https://user-images.githubusercontent.com/90148780/236968803-aa4db36c-a4c2-44a9-b33d-4a6f61cd697d.png)
 
 # **FOOD** | Proyecto Individual
 
